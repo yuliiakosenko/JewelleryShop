@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home Page</title>
+
+   
+<link rel="preconnect" href="https://fonts.googleapis.com">  
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Montserrat:wght@400;700&display=swap"
+    rel="stylesheet">
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.7.2/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.7.2/dist/js/bootstrap.bundle.min.js"></script>
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+
+    <style>
+     
+
+      
+
+        /* Styles for the container (size, colour, position) */
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f1f1f1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Styles for the submit button */
+        .btn-primary {
+            background-color: lightblue;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: lightblue;
+        }
+
+ 
+        /* Styles for the carousel images */
+        #myCarousel .carousel-inner .item img {
+            max-height: 300px;
+          
+            max-width: 300px;
+           
+            width: auto;
+            margin: 0 auto;
+
+        }
+        /*styles of background for page*/
+        #page {
+            background-color: lightblue;
+          max-width: 100%;
+  
+        }
+/*styles for navigation box*/
+        #nav {
+            background-color: #f1f1f1;
+            width: 1500px;
+            height:50px;
+            display: table;
+            position: relative;
+            margin: 0 auto;
+            text-align: center;
+        }
+        #navitem{
+            width: 150px;
+            height: 50px;
+            float: left;
+            line-height: 50px;
+
+        }
+/*styles for descriptions and other text*/
+        #text {
+           
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 40px;
+    color: grey;
+    font-family: 'Allura', cursive;
+        }
+
+
+        #welcome {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 60px;
+        line-height: 50px;
+        color: #000000;
+        font-family: 'Allura', cursive;
+        padding-bottom: 10px;
+        padding-left: 25px;
+        }
+
+    
+    </style>
+</head>
+
+<body>
+
+
+    <div id="page"><br>
+<h1 id="welcome">Welcome to Jewellery Store!</h1>
+
+<div id = "nav">
+    <a  id="text" href ="#"><div id="navitem">Home</div></a>
+    <a  id="text" href="/checkout.html"><div id="navitem">Checkout</div></a>
+    
+</div>
+
+
+
+<table cellpadding ="30">
+
+        
+            <td rowspan="3"><div class="container">
+               
+                <p id="text">Welcome to our Jewellery store, where we offer a stunning collection of minimalistic Jewellery pieces
+                    that are both
+                    timeless and elegant. Our store is dedicated to providing you with high-quality, affordable Jewellery
+                    that will elevate
+                    your style and enhance your everyday look.
+                </p><br><br><br>
+            <!--Code block partly taken from: https://getbootstrap.com/docs/5.0/components/carousel/ -->
+                <div id="carouselExampleSlidesOnly" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+            
+                            <img src="image/6.jpg" alt="Bracelet" style="max-height: 400px; max-width: 400px">
+                        </div>
+            
+                        <div class="carousel-item">
+                            <img src="image/7.jpg" alt="Ring" style="max-height: 400px; max-width: 400px">
+                        </div>
+            
+                        <div class="carousel-item">
+                            <img src="image/9.jpg" alt="Earrings" style="max-height: 400px; max-width: 400px">
+                        </div>
+            
+                        <div class="carousel-item">
+                            <img src="image/10.jpg" alt="Bracelet" style="max-height: 400px; max-width: 400px">
+                        </div>
+            
+                        <div class="carousel-item">
+                            <img src="image/11.jpg" alt="Ring" style="max-height: 400px; max-width: 400px">
+                        </div>
+            
+                        <div class="carousel-item">
+                            <img src="image/12.jpg" alt="Earrings" style="max-height: 400px; max-width: 400px">
+                        </div>
+            
+                        <div class="carousel-item">
+                            <img src="image/13.jpg" alt="Earrings" style="max-height: 400px; max-width: 400px">
+                        </div>
+            <!--End Code Block-->
+            
+                    </div>
+                </div>
+                <br><br>
+            <!--Checkout button-->
+                <a class="btn btn-primary" href="checkout.html" role="button">Checkout</a>
+                <br><br>
+            </div> 
+            
+            </div>
+            <!--Products, by clicking on picture user get to page of item-->
+            <td>
+                <a id="item" href="/shop?rec=1">
+                    <img src="/image/1.jpg" alt="Bracelet" width="250">
+                   
+                </a>
+            </td>
+
+            <td>
+            <a id="item" href="/shop?rec=2">
+            <img src="/image/2.jpg" alt="Ring" width="250">
+            </a>
+            </td>
+
+            <td>
+                <a id="item" href="/shop?rec=3">
+                    <img src="/image/3.png" alt="Earings" width="250">
+                </a>
+            </td>
+
+            
+
+        </tr>
+        <tr>
+
+
+
+        <td>
+            <a  href="/shop?rec=5">
+                <img src="/image/5.jpg" alt="Earings" width="250">
+            </a>
+        </td>
+       
+        <td>
+            <a  href="/shop?rec=6">
+                <img src="/image/18.jpg" alt="Ring" width="250">
+            </a>
+        </td>
+        
+        <td>
+            <a  href="/shop?rec=7">
+                <img src="/image/19.jpg" alt="Earings" width="250">
+            </a>
+        </td>
+        
+       
+
+            
+        </tr>
+
+        <tr>
+            <td>
+                <a id="item" href="/shop?rec=9">
+                    <img src="/image/21.jpg" alt="Bracelet" width="250">
+        
+                </a>
+            </td>
+        
+            <td>
+                <a id="item" href="/shop?rec=10">
+                    <img src="/image/22.jpg" alt="Ring" width="250">
+                </a>
+            </td>
+        
+            <td>
+                <a id="item" href="/shop?rec=11">
+                    <img src="/image/23.jpg" alt="Earings" width="250">
+                </a>
+            </td>
+        
+           
+        
+        
+        </tr>
+
+        <tr>
+
+<td id="text">Jewelry has the power to be this one little thing that can make you feel unique...</td>
+
+
+            <td>
+                <a id="item" href="/shop?rec=12">
+                    <img src="/image/24.jpg" alt="Necklace" width="250">
+                </a>
+            </td>
+<td>
+    <a id="item" href="/shop?rec=8">
+        <img src="/image/20.jpg" alt="Necklace" width="250">
+    </a>
+</td>
+
+<td>
+    <a id="item" href="/shop?rec=4">
+        <img src="/image/4.jpg" alt="Necklace" width="250">
+    </a>
+</td>
+        </tr>
+
+
+
+</table>
+
+
+
+
+
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+        var carouselImage = document.getElementById("carousel-image");
+        var carouselItems = Array.from(document.querySelectorAll(".carousel-item"));
+// Function to start the carousel
+        function startCarousel() {
+            var randomIndex = Math.floor(Math.random() * carouselItems.length);
+
+            // Remove the "active" class from all carousel items
+            carouselItems.forEach(function (item) {
+                item.classList.remove("active");
+            });
+
+            // Add the "active" class to the randomly selected carousel item
+            carouselItems[randomIndex].classList.add("active");
+            carouselImage.src = carouselItems[randomIndex].querySelector("img").src;
+        }
+      // Call the  function to start the carousel
+        startCarousel();
+    });
+</script>
+
+   
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"  
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

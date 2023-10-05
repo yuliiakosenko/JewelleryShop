@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang ="en">
+    <head>
+   
+        <style>
+            
+        /* font styles for product name and details */
+         #product {
+            font-size: 17px;
+            color: #736d6e;
+          
+        }
+        #price{
+            font-size: 15px;
+            color: #736d6e;
+          
+        }
+
+        /* Styles for the container */
+        .centerContent {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f1f1f1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Styles for the submit button */
+       button[type="submit"] {
+            background-color: lightblue;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        button[type="submit"]:hover {
+            background-color: lightblue;
+        }
+
+        .image-container {
+    display: flex;
+    align-items: center;
+}
+
+.back{
+    background-color: lightblue;
+}
+
+
+    </style>
+            
+        </style>    
+        </head>
+
+    <body>
+        <div class="back"> <!--class for declairing background colour of page-->
+        <div class="image-container"> <!--class for declairing the position of pictures-->
+            <img src="/image/16.jpg" width="300">
+            <br><br><br>
+            <img src="/image/17.jpg" width="200">
+            
+        
+
+
+        <div class="centerContent"> <!--class for declare correct position for box with important information about product, choozing size and quantity-->
+            <h1 id="product"><%=myMessage %></h1>
+            <h2>Model: <%=model %></h2>
+            <h2 id="price"><%- myPrice%> €</h2>
+            <img src="/image/<%= myImage %>" width="400">
+            <br>
+            <label for="quantity">Quantity:</label>
+            <select id="quantity" name="Quantity"> <!--creating id for using it in the script-->
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <br>
+            <label for="size">Size:</label>
+            <select id="size" name="Size"><!--creating id for using it in the script-->
+                <option value="4">4</option>
+                <option value="8">8</option>
+                <option value="10">10</option>
+                <option value="12">12</option>
+                <option value="14">14</option>
+                <option value="16">16</option>
+            </select>
+            <br>
+            <details>
+                <summary>Take care!</summary>
+                <p>
+                    To properly care for jewelry, it is necessary to use special cosmetics, store them separately from other items, avoid
+                    contact with chemical compounds, refrain from wearing them while moving heavy objects or engaging in sports to prevent
+                    scratches and deformation.
+                    Jewelry should be removed when visiting the gym, pool, or sauna.
+                </p>
+            </details>
+        <br><br><br>
+            <button id="button" type="submit" onclick="addToCard()">Add to Cart</button> <!--specific id for button for styles-->
+            <br>
+        <a href = "home">Back to Home Page</a>
+        <a class="btn btn-primary" href="checkout.html" role="button">Checkout</a> <!--specific class for button for styles-->
+        <br><br>
+
+       
+        </div>
+        <img src="/image/13.jpg" width="200">
+        <img src="/image/15.jpg" width="300">
+</div>
+</div>
+    </body>
+
+</html>
+
+<script>
+    function addToCard()
+    {
+      
+       let product = document.getElementById("product").innerHTML;
+       let quantity = document.getElementById("quantity").value;
+       let size = document.getElementById("size").value;
+      // let item = "Quantity: " + quantity + "         " + "Size: " + size;  // combine quantity and size as a single string
+
+       let price = document.getElementById("price").innerHTML;
+       //localStorage.test = quatity;
+
+       let info = { Price: price, Quantity: quantity, Size: size }; //array of all total information
+       
+        localStorage.setItem(product, JSON.stringify(info) );
+
+
+    }
+</script>

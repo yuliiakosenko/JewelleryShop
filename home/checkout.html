@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Checkout</title>
+    <style>
+        #cart_items {
+            font-size: 12px;
+            color: #a19898;
+            margin-bottom: 1px;
+            
+        }
+
+         #total_cost {
+            font-size: 17px;
+            color: #736d6e;
+          
+        }
+
+        /* Styles for the container */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f1f1f1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        /* Styles for button */
+    button[type="submit"] {
+            background-color: lightblue;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        button[type="submit"]:hover {
+            background-color: lightblue;
+        }
+
+        .back {
+            background-color: lightblue;
+        }
+ 
+
+    </style>
+
+
+
+</head>
+
+<body>
+    <div class="back"> <!--creat class for styling of background of page-->
+    <div class="container" align="center"><!--creat class for styling of checkout block !-->
+        <h1>Checkout</h1>
+        <h2 id="cart_items"></h2>
+        <h2 id="total_cost"></h2> <br>
+        <form>
+            <fieldset>
+            <legend>Customer Information</legend>
+            <label for="name">First Name:</label><br>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="lastname">Last Name:</label><br>
+            <input type="text" id="lastname" name="last name" required><br><br>
+
+            <label for="email">E-mail:</label><br>
+            <input type="email" name="email" required><br><br><br>
+
+            <label for="paymentMethod">Payment Method:</label>
+            <select id="paymentMethod" name="paymentMethod">
+                <option value="MasterCard" selected>MasterCard</option>
+                <option value="PayPal">PayPal</option>
+                <option value="Visa">Visa</option>
+                <option value="American express">American express</option>
+            </select>
+            </fieldset> <br><br>
+            </form>
+            <button id="button" type="submit">Place Order</button><br>
+            <a href="home">Back to shop</a>
+            
+       
+    </div>
+    </div>
+    <img src="/image/14.jpg" width="100%">
+</body>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        //declare variables by id
+        var cartItemsElement = document.getElementById("cart_items");
+        var totalCostElement = document.getElementById("total_cost");
+        var cartItems = [];
+        var totalCost = 0; //declare variable with value 0
+
+        for (let i = 0; i < localStorage.length; i++) {   //go through all items in local storage
+            let key = localStorage.key(i);
+            if (key !== "length" && key !== "key" && key !== "getItem" && key !== "setItem" && key !== "removeItem" && key !== "clear") {
+                let content = JSON.parse(localStorage.getItem(key));
+                if (content.Quantity > 0) { // // Check if item quantity is greater than 0
+                    let itemCost = parseFloat(content.Price) * parseInt(content.Quantity); //Calculate item cost
+                    totalCost += itemCost;//// Update the total cost
+                    cartItems.push(key + " x " + content.Quantity); //// Add item to the cartItems array in the format "item x quantity"
+                }
+            }
+        }
+        //Show the cart items and total cost
+        if (cartItems.length > 0) {
+            cartItemsElement.textContent = "Cart Items: " + cartItems.join(", ");
+            totalCostElement.textContent = "Total Cost: " + totalCost.toFixed(2) + " €";
+        } else {
+            cartItemsElement.textContent = "Your cart is empty.";
+        }
+    });
+</script>
+
+</html>
